@@ -2,6 +2,9 @@
 node_modules/
 yarn.lock
 
+# Config.json
+config.json
+
 # Log files
 logs/
 *.log
