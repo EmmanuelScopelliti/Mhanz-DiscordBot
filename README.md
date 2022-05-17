@@ -22,6 +22,49 @@
 
 #### Bot version 2.0 is out now !!
 
+## Feel free to personalize this bot
+
+### Access the Portal and create a new bot
+
+*  Access the [Discord Developer Portal](https://discord.com/developers/applications) with your Discord credentials.
+  (do not be afraid, is a discord platform)
+*  Create a new Application.
+  (This would be the platform where you will be able to create your bot)
+* Fill the **General Information** tab.
+  (Here you can modify the name, the description, the icon of your bot and many other things)
+* Fill the **OAuth2** tab. 
+  * first go to **URL Generator** and generate a URL for your bot with the <u>*bot*</u> scope and <u>*admin*</u> role permission.
+  * then copy the URL and paste it in the **General** Tab.
+  * paste the link also in a new tab and invit the bot to your server.
+* Now head to the **Bot** tab.
+  * Give a *username* and an *icon* to your bot.
+  * Copy the **Bot Token** and paste it somewhere you can access later.
+* If you want, you can add a *cover image* to your bot in the **Rich Presence** tab and **Art Assets** subsection.
+* You can also invite a friend in the **App Testers** tab.
+
+### Set up your bot
+* If you don't have it, download [visual studio code](https://code.visualstudio.com/download), [git](https://git-scm.com/downloads) and [node.js](https://nodejs.org/en/download/) and install them.
+* clone this repository in your local machine with the help of git documentation.
+* open the local repository with vscode.
+* now rename the file [myconfig.json](myconfig.json) to config.json and fill it with your prefix an token (the one you previously saved) and save (TIP: use ctrl+s or ⌘+s).
+* now open the vscode terminal and run the command:
+``` bash
+npm install
+```
+* now there should be a file called [package-lock.json](package-lock.json) in the repository.
+* now run the command: `node Mhanz.js` and you should be able to see the bot in your server.
+
+### Modify the bot
+* You can modify the bot by editing the file [Mhanz.js](Mhanz.js)
+* modify only the section inside the 
+``` javascript
+client.on("message", async message => {
+  [...]
+});
+```
+* you have to stop the bot by typing `ctrl+c` or `⌘+c` in the terminal, in order to apply the modifications.
+* then run again the command: `node Mhanz.js`.
+
 ## About
 
 discord.js is a powerful [Node.js](https://nodejs.org) module that allows you to easily interact with the
