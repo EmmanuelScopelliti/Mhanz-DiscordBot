@@ -1,0 +1,33 @@
+{
+  "name": "mhanz",
+  "version": "2.0.0",
+  "description": "A Discord Bot for fun",
+  "main": "mhanz.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmanuelScopelliti/Mhanz-DiscordBot.git"
+  },
+  "author": "Emmanuel Scopelliti",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/EmmanuelScopelliti/Mhanz-DiscordBot/issues"
+  },
+  "homepage": "https://github.com/EmmanuelScopelliti/Mhanz-DiscordBot#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.3",
+    "airhorn-cmds": "^2.2.2",
+    "discord.js": "^12.5.3",
+    "ffmpeg": "^0.0.4",
+    "ffmpeg-static": "^4.4.0",
+    "firebase": "^9.6.10",
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl": "^1.4.1",
+    "ytdl-core": "^4.9.1"
+  },
+  "devDependencies": {
+      "eslint": "^7.32.0"
+  }
+}

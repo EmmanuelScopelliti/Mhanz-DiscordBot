@@ -1,0 +1,4 @@
+* text=auto eol=if
+
+# binary file excludsions
+*.png binary
