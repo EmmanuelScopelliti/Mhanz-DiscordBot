@@ -5,6 +5,9 @@ yarn.lock
 # Config.json
 config.json
 
+# package-lock.json
+package-lock.json
+
 # Log files
 logs/
 *.log
