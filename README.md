@@ -16,11 +16,11 @@
 
 ### this bot will do the same thing as a horn, but it will say "Mhanz"
 
-#### [discord bot](https://discord.com/oauth2/authorize?client_id=826425108460863528&scope=bot) (V: 2.0.0)
+#### [discord bot](https://discord.com/oauth2/authorize?client_id=826425108460863528&scope=bot) (V. 2.0.0)
 
 ## News!! 
 
-#### Bot version 2.0 is out
+#### Bot version 2.0 is out now !!
 
 ## About
 
