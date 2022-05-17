@@ -20,7 +20,7 @@
 
 ## News!! 
 
-#### Bot version 2.0 in development
+#### Bot version 2.0 is out
 
 ## About
 
