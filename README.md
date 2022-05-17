@@ -16,7 +16,7 @@
 
 ### this bot will do the same thing as a horn, but it will say "Mhanz"
 
-#### [discord bot](https://discord.com/oauth2/authorize?client_id=826425108460863528&scope=bot) (V: 1.5.5)
+#### [discord bot](https://discord.com/oauth2/authorize?client_id=826425108460863528&scope=bot) (V: 2.0.0)
 
 ## News!! 
 
