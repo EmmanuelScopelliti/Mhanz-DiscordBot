@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/EmmanuelScopelliti/Mhanz-DiscordBot/issues"
   },
-  "homepage": "https://github.com/EmmanuelScopelliti/Mhanz-DiscordBot#readme",
+  "homepage": "https://github.com/EmmanuelScopelliti#readme",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
     "airhorn-cmds": "^2.2.2",

