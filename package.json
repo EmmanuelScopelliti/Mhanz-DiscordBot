@@ -23,7 +23,6 @@
     "discord.js": "^13.7.0",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.4.0",
-    "firebase": "^9.6.10",
     "fluent-ffmpeg": "^2.1.2",
     "ytdl": "^1.4.1",
     "ytdl-core": "^4.9.1"
