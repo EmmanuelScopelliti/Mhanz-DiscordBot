@@ -18,8 +18,9 @@
   "homepage": "https://github.com/EmmanuelScopelliti#readme",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
+    "@discordjs/voice": "^0.9.0",
     "airhorn-cmds": "^2.2.2",
-    "discord.js": "^12.5.3",
+    "discord.js": "^13.7.0",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^4.4.0",
     "firebase": "^9.6.10",
