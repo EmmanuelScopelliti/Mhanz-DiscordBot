@@ -1,8 +1,16 @@
 const Discord = require("discord.js");
 const { prefix, token } = require("./config.json");
 
-const client = new Discord.Client();
-new Discord.Permissions(8);
+
+const client = new Discord.Client({ 
+    intents: [
+        Discord.Intents.FLAGS.GUILD_MESSAGES, 
+        Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS, 
+        Discord.Intents.FLAGS.GUILD_VOICE_STATES,
+        Discord.Intents.FLAGS.GUILD_MEMBERS,
+    ],
+});
+new Discord.Permissions(BigInt(8));
 
 var Hour;
 var Min;
