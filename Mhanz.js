@@ -12,9 +12,7 @@ const client = new Discord.Client({
 });
 new Discord.Permissions(BigInt(8));
 
-var Hour;
-var Min;
-var Sec;
+var Hour, Min, Sec;
 
 client.once("ready", () => {
     console.log("Online!");

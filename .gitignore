@@ -6,6 +6,9 @@ yarn.lock
 config.json
 package-lock.json
 
+#new version
+Mhanz_V2.js
+
 # Log files
 logs/
 *.log
