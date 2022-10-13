@@ -1,16 +1,29 @@
-const Discord = require("discord.js");
+const { Discord, GatewayIntentBits, Partials, ApplicationCommandType, ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const { token, prefix } = require("./config.json");
 
 
-const client = new Discord.Client({ 
-    intents: [
-        Discord.Intents.FLAGS.GUILD_MESSAGES, 
-        Discord.Intents.FLAGS.GUILD_MESSAGE_REACTIONS, 
-        Discord.Intents.FLAGS.GUILD_VOICE_STATES,
-        Discord.Intents.FLAGS.GUILD_MEMBERS,
-    ],
+const client = new Discord({
+    intents: [GatewayIntentBits.Guilds],
+    partials: [Partials.Channel]
 });
-new Discord.Permissions(BigInt(8));
+
+const command = {
+    name: { prefix },
+    type: ApplicationCommandType.ChatInput,
+    options: [
+      {
+        name: 'm',
+        description: 'get a text response',
+        type: ApplicationCommandOptionType.String,
+      },
+        {
+            name: 'help',
+            description: 'get a help about commands',
+            type: ApplicationCommandOptionType.String,
+        }
+    ],
+};
+
 
 var Hour, Min, Sec;
 
@@ -25,6 +38,7 @@ client.once("reconnecting", () => {
 client.once("disconnect", () => {
     console.log("Disconnect!");
 });
+
 let queue = null;
 
 function getDate() {
@@ -116,13 +130,13 @@ async function leaveChannel(message, songQueue) {
 }
 
 async function createEmbed(songQueue) {
-    const embed = new Discord.MessageEmbed()
+    const embed = new EmbedBuilder()
         .setColor('#0099ff')
         .setTitle('Queue')
         .setAuthor({ name: 'Mhanz' })
         .setDescription('The queue is: ');
     for (let i = 0; i < queue.length; i++) {
-        embed.addField({ name: 'Song', value: songQueue[i].title, inline: false });
+        embed.addFields({ name: 'Song', value: songQueue[i].title });
     }
     return embed;
 }
@@ -133,7 +147,12 @@ let song;
 // read from discrod chat and check if the message is a command
 client.on("message", async message => {
     if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
+    if (!message.content.startsWith(command)) return;
+
+    switch (message.content){
+        case (command.options === 'm'):
+            message
+    }
 
     if (message.content === `${prefix}m`) {
 
@@ -143,23 +162,23 @@ client.on("message", async message => {
 
     } else if (message.content === `${prefix}help`) {
 
-        message.channel.send('use "!!m" for a chat answer' +
-            '\nuse "!!mhanz" in a voice channel for a surprise' +
-            '\nuse "!!arinza" for a cool song' +
-            '\nuse "!!lollo" for a cit from lollo' +
-            '\nuse "!!ultra" in order to activate the Ultra Instinct' +
-            '\nuse "!!ultratheme" for theme in Dragonball' +
-            '\nuse "!!emotional" for an emotional damage' +
-            '\nuse "!!saluta" for a greeting' +
-            '\nuse "!!dimmi" for a Masseo cit.' +
+        message.channel.send('use "!!m" for a chat answer'
+            // '\nuse "!!mhanz" in a voice channel for a surprise' +
+            // '\nuse "!!arinza" for a cool song' +
+            // '\nuse "!!lollo" for a cit from lollo' +
+            // '\nuse "!!ultra" in order to activate the Ultra Instinct' +
+            // '\nuse "!!ultratheme" for theme in Dragonball' +
+            // '\nuse "!!emotional" for an emotional damage' +
+            // '\nuse "!!saluta" for a greeting' +
+            // '\nuse "!!dimmi" for a Masseo cit.' +
             // '\nuse "!!dloop" for a Masseo cit. in loop' +
-            '\nuse "!!jojo" for a JoJo reference' +
-            '\nuse "!!enio" for a cagagta pazzesca' +
-            '\nuse "!!pezzo di merda" for an offense' +
-            '\nuse "!!spengo" for a man in the wood' +
-            '\nuse "!!crisi" for another man in the wood' +
-            '\nuse "!!motm" for music of the month');
-        // '\nuse "!!motm" for music of the month' +
+            // '\nuse "!!jojo" for a JoJo reference' +
+            // '\nuse "!!enio" for a cagagta pazzesca' +
+            // '\nuse "!!pezzo di merda" for an offense' +
+            // '\nuse "!!spengo" for a man in the wood' +
+            // '\nuse "!!crisi" for another man in the wood' +
+            // '\nuse "!!motm" for music of the month'
+        );
         // '\nuse "!!mloop" for a loop of the "mhanz" command');
         console.log("Answered Succesfully! At ");
         getDate;
