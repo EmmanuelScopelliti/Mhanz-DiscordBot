@@ -7,7 +7,7 @@ config.json
 package-lock.json
 
 #new version
-Mhanz_V2.js
+mhanz-staging.js
 
 # Log files
 logs/
