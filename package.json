@@ -17,9 +17,6 @@
   },
   "homepage": "https://github.com/EmmanuelScopelliti#readme",
   "dependencies": {
-    "@discordjs/builders": "^0.15.0",
-    "@discordjs/opus": "^0.5.3",
-    "@discordjs/rest": "^0.5.0",
     "@discordjs/voice": "^0.9.0",
     "airhorn-cmds": "^2.2.2",
     "discord-api-types": "^0.33.5",
