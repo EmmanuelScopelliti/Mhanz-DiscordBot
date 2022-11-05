@@ -43,9 +43,10 @@
 * You can also invite a friend in the **App Testers** tab.
 
 ### Set up your bot
-* If you don't have it, download [visual studio code](https://code.visualstudio.com/download), [git](https://git-scm.com/downloads) and [node.js](https://nodejs.org/en/download/) and install them.
+* If you don't have it, download [Visual Studio](https://visualstudio.microsoft.com/it/downloads/), [visual studio code](https://code.visualstudio.com/download), [git](https://git-scm.com/downloads) and [node.js](https://nodejs.org/en/download/) and install them.
+* On **Visual Studio**: install the "_Desktop Development with C++_" Workload;
 * clone this repository in your local machine with the help of git documentation.
-* open the local repository with vscode.
+* open the local repository with **visual studio code**.
 * now rename the file [myconfig.json](myconfig.json) to config.json and fill it with your prefix an token (the one you previously saved) and save (TIP: use ctrl+s or ⌘+s).
 * now open the vscode terminal and run the command:
 ``` bash

@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/EmmanuelScopelliti#readme",
   "dependencies": {
-    "@discordjs/voice": "^0.9.0",
+    "@discordjs/voice": "^0.13.0",
     "airhorn-cmds": "^2.2.2",
     "discord-api-types": "^0.33.5",
     "discord.js": "^14.6.0",
@@ -26,6 +26,7 @@
     "fluent-ffmpeg": "^2.1.2",
     "libsodium-wrappers": "^0.7.10",
     "opusscript": "^0.0.8",
+    "snyk": "^1.1048.0",
     "sodium": "^3.0.2",
     "ytdl": "^1.4.1",
     "ytdl-core": "^4.9.1"
