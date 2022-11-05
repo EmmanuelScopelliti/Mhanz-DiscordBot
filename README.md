@@ -16,11 +16,12 @@
 
 ### this bot will do the same thing as a horn, but it will say "Mhanz"
 
-#### [discord bot](https://discord.com/oauth2/authorize?client_id=826425108460863528&scope=bot) (V. 2.0.0)
+#### [discord bot](https://discord.com/oauth2/authorize?client_id=826425108460863528&scope=bot) (V. 3.0.0)
 
 ## News!! 
 
-#### Bot version 2.0 is out now !!
+#### Bot version 3.0 is out now !!
+#### With Discord.js v14
 
 ## Feel free to personalize this bot
 
@@ -49,18 +50,19 @@
 * open the local repository with **visual studio code**.
 * now rename the file [myconfig.json](myconfig.json) to config.json and fill it with your prefix an token (the one you previously saved) and save (TIP: use ctrl+s or ⌘+s).
 * now open the vscode terminal and run the command:
-``` bash
+```bash
 npm install
 ```
 * now there should be a file called [package-lock.json](package-lock.json) in the repository.
 * now run the command: `node Mhanz.js` and you should be able to see the bot in your server.
 
 ### Modify the bot
-* You can modify the bot by editing the file [Mhanz.js](Mhanz.js)
-* modify only the section inside the 
-``` javascript
-client.on("message", async message => {
-  [...]
+* You can modify the bot by editing the files [Mhanz.js](Mhanz.js) and [deploy-commands.js](deploy-commands.js)
+* add your own slash commands in [deploy-commands.js](deploy-commands.js) with the class `slashCommandBuilder()`
+* in [Mhanz.js](Mhanz.js), modify only the section inside the
+```js
+client.on('interactionCreate', async interaction => {
+  // your code here
 });
 ```
 * you have to stop the bot by typing `ctrl+c` or `⌘+c` in the terminal, in order to apply the modifications.
@@ -78,10 +80,12 @@ discord.js is a powerful [Node.js](https://nodejs.org) module that allows you to
 
 ## Installation
 
-**Node.js 14.0.0 or newer is required.**  
+**Node.js 16.9.0 or newer is required.**
 
 ```sh-session
 npm install discord.js
+yarn add discord.js
+pnpm add discord.js
 ```
 
 ### Optional packages
@@ -90,50 +94,104 @@ npm install discord.js
 - [erlpack](https://github.com/discord/erlpack) for significantly faster WebSocket data (de)serialisation (`npm install discord/erlpack`)
 - [bufferutil](https://www.npmjs.com/package/bufferutil) for a much faster WebSocket connection (`npm install bufferutil`)
 - [utf-8-validate](https://www.npmjs.com/package/utf-8-validate) in combination with `bufferutil` for much faster WebSocket processing (`npm install utf-8-validate`)
-- [@discordjs/voice](https://github.com/discordjs/voice) for interacting with the Discord Voice API
+- [@discordjs/voice](https://www.npmjs.com/package/@discordjs/voice) for interacting with the Discord Voice API (`npm install @discordjs/voice`)
 
 ## Example usage
 
+Install discord.js:
+
+```sh-session
+npm install discord.js
+yarn add discord.js
+pnpm add discord.js
+```
+
+Register a slash command against the Discord API:
+
 ```js
-const { Client, Intents } = require('discord.js');
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const { REST, Routes } = require('discord.js');
+
+const commands = [
+	{
+		name: 'ping',
+		description: 'Replies with Pong!',
+	},
+];
+
+const rest = new REST({ version: '10' }).setToken(TOKEN);
+
+(async () => {
+	try {
+		console.log('Started refreshing application (/) commands.');
+
+		await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
+
+		console.log('Successfully reloaded application (/) commands.');
+	} catch (error) {
+		console.error(error);
+	}
+})();
+```
+
+Afterwards we can create a quite simple example bot:
+
+```js
+const { Client, GatewayIntentBits } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
+	console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', message => {
-  if (message.content === 'ping') {
-    message.channel.send('pong');
-  }
+client.on('interactionCreate', async (interaction) => {
+	if (!interaction.isChatInputCommand()) return;
+
+	if (interaction.commandName === 'ping') {
+		await interaction.reply('Pong!');
+	}
 });
 
-client.login('token');
+client.login(TOKEN);
 ```
 
 ## Links
 
-- [Website](https://discord.js.org/) ([source](https://github.com/discordjs/website))
-- [Documentation](https://discord.js.org/#/docs/main/master/general/welcome)
-- [Guide](https://discordjs.guide/) ([source](https://github.com/discordjs/guide)) - this is still for stable  
-  See also the [Update Guide](https://discordjs.guide/additional-info/changes-in-v12.html), including updated and removed items in the library.
-- [Discord.js Discord server](https://discord.gg/djs)
-- [Discord API Discord server](https://discord.gg/discord-api)
-- [GitHub](https://github.com/discordjs/discord.js)
-- [NPM](https://www.npmjs.com/package/discord.js)
-- [Related libraries](https://discord.com/developers/docs/topics/community-resources#libraries)
+- [Website][website] ([source][website-source])
+- [Documentation][documentation]
+- [Guide][guide] ([source][guide-source])
+  See also the [Update Guide][guide-update], including updated and removed items in the library.
+- [discord.js Discord server][discord]
+- [Discord API Discord server][discord-api]
+- [GitHub][source]
+- [npm][npm]
+- [Related libraries][related-libs]
 
 ### Extensions
 
-- [RPC](https://www.npmjs.com/package/discord-rpc) ([source](https://github.com/discordjs/RPC))
+- [RPC][rpc] ([source][rpc-source])
 
 ## Contributing
 
 Before creating an issue, please ensure that it hasn't already been reported/suggested, and double-check the
-[documentation](https://discord.js.org/#/docs).  
-See [the contribution guide](https://github.com/discordjs/discord.js/blob/master/.github/CONTRIBUTING.md) if you'd like to submit a PR.
+[documentation][documentation].  
+See [the contribution guide][contributing] if you'd like to submit a PR.
 
 ## Help
 
 If you don't understand something in the documentation, you are experiencing problems, or you just need a gentle
-nudge in the right direction, please don't hesitate to join our official [Discord.js Server](https://discord.gg/djs).
+nudge in the right direction, please don't hesitate to join our official [discord.js Server][discord].
+
+[website]: https://discord.js.org/
+[website-source]: https://github.com/discordjs/discord.js/tree/main/apps/website
+[documentation]: https://discord.js.org/#/docs
+[guide]: https://discordjs.guide/
+[guide-source]: https://github.com/discordjs/guide
+[guide-update]: https://discordjs.guide/additional-info/changes-in-v14.html
+[discord]: https://discord.gg/djs
+[discord-api]: https://discord.gg/discord-api
+[source]: https://github.com/discordjs/discord.js/tree/main/packages/discord.js
+[npm]: https://www.npmjs.com/package/discord.js
+[related-libs]: https://discord.com/developers/docs/topics/community-resources#libraries
+[rpc]: https://www.npmjs.com/package/discord-rpc
+[rpc-source]: https://github.com/discordjs/RPC
+[contributing]: https://github.com/discordjs/discord.js/blob/main/.github/CONTRIBUTING.md

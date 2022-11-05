@@ -6,9 +6,10 @@ Keeping user information safe and secure is a top priority, and we welcome the c
 
 If you believe you've found a security issue in software that is maintained in this repository, we encourage you to notify us.
 
-| Version | In scope | Source code |
-| ------- | -------- | ----------- |
-| 2.0.0  | ✅ | https://github.com/EmmanuelScopelliti/Mhanz-DiscordBot |
+| Version | In scope |                      Source code                       |
+|:-------:|:--------:|:------------------------------------------------------:|
+|  2.0.0  |    ❌     |                          N/D                           |
+|  3.0.0  |    ✅     | https://github.com/EmmanuelScopelliti/Mhanz-DiscordBot |
 
 # How to Submit a Report
 
