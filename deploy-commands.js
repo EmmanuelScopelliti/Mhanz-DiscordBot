@@ -34,6 +34,11 @@ const commands = [
         option.setName('channel').setDescription('The channel to join').setRequired(true)
           .addChannelTypes(ChannelType.GuildVoice)
       ),
+    new SlashCommandBuilder().setName('lecca').setDescription('another cit. from masseo')
+      .addChannelOption((option) =>
+        option.setName('channel').setDescription('The channel to join').setRequired(true)
+          .addChannelTypes(ChannelType.GuildVoice)
+      ),
     new SlashCommandBuilder().setName('lollo').setDescription('a cit. from Lollo')
       .addChannelOption((option) =>
         option.setName('channel').setDescription('The channel to join').setRequired(true)

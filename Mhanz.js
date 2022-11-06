@@ -91,6 +91,9 @@ client.on('interactionCreate', async interaction => {
             case "jojo":
                 playSong('src/Jojo.mp3', connection);
                 break;
+            case "lecca":
+                playSong('src/lecca.mp3', connection);
+                break;
             case "lollo":
                 playSong('src/lollo.mp3', connection);
                 break;
