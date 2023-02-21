@@ -1,6 +1,6 @@
 {
   "name": "mhanz",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "A Discord Bot for fun",
   "main": "mhanz.js",
   "scripts": {
@@ -28,6 +28,7 @@
     "opusscript": "^0.0.8",
     "snyk": "^1.1069.0",
     "sodium": "^3.0.2",
+    "undici":"^5.20.0",
     "ytdl": "^1.4.1",
     "ytdl-core": "^4.9.1"
   },
